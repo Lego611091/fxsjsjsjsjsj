@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QS Proxy</title>
+  <style>
+    /* Global reset & fullscreen layout */
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;          /* prevent scrollbars */
+      background: #000;          /* black backdrop */
+    }
+
+    /* Iframe fills the entire viewport, no borders */
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Optional: subtle loading indicator (pure CSS, no extra markup) */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: #000;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Fullscreen proxy iframe – the src points to the QS worker -->
+  <iframe 
+    src="https://qsproxyz.q-s-d.workers.dev/" 
+    title="QS Proxy"
+    allowfullscreen
+  ></iframe>
+</body>
+</html>
